@@ -9,17 +9,16 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/api", (_, res) => {
-  res.send("hi");
-});
+const FILE = path.join(__dirname, "blobs", "recipes.json");
 
 app.get("/api/recipes", (req, res) => {
   res.setHeader("Content-Type", "application/json");
-  const content = fs.readFileSync(
-    path.join(__dirname, "blobs", "recipes.json"),
-    "utf8",
-  );
-  res.end(content);
+  if (!fs.existsSync(FILE)) {
+    res.json({ success: -1, data: "Error reading file" });
+    return;
+  }
+  const content = fs.readFileSync(FILE, "utf8");
+  res.end({ success: 1, data: content });
 });
 
 app.post("/api", function(req, res) {
