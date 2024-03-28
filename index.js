@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var apiUrl = "https://jsonblob.com/api/jsonBlob/1212147388440764416";
+  var apiUrl = "http://localhost:3000/api/recipes";
   var offset = 0;
   var rpp = 9;
   var selectedId = -1;
