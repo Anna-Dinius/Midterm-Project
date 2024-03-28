@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
+const path = require("path");
 
 const app = express();
 const port = 3000;
@@ -14,9 +15,10 @@ app.get("/api", (_, res) => {
 
 app.get("/api/recipes", (req, res) => {
   res.setHeader("Content-Type", "application/json");
-
-  const content = fs.readFileSync(`./blobs/recipes.json`, "utf8");
-
+  const content = fs.readFileSync(
+    path.join(__dirname, "blobs", "recipes.json"),
+    "utf8",
+  );
   res.end(content);
 });
 
