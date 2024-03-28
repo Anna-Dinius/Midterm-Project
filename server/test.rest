@@ -1,0 +1,14 @@
+###
+PUT http://localhost:3000/api/dinius
+Content-type: application/json
+
+{
+	"email":"diniusa1@nku.edu",
+	"password":"2w94025309d"
+}
+
+###
+GET http://localhost:3000/api/dinius
+
+###
+DELETE http://localhost:3000/api/dinius
