@@ -1,5 +1,5 @@
 ###
-PUT http://localhost:3000/api/dinius
+PUT http://localhost:3000/api/
 Content-type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-type: application/json
 }
 
 ###
-GET http://localhost:3000/api/dinius
+GET http://localhost:3000/api/
 
 ###
-DELETE http://localhost:3000/api/dinius
+DELETE http://localhost:3000/api/

@@ -12,9 +12,11 @@ app.get("/api", (_, res) => {
   res.send("hi");
 });
 
-app.get("/api/:filename", (req, res) => {
+app.get("/api/recipes", (req, res) => {
   res.setHeader("Content-Type", "application/json");
-  const content = fs.readFileSync(`./${filename}.json`, "utf8");
+
+  const content = fs.readFileSync(`./blobs/recipes.json`, "utf8");
+
   res.end(content);
 });
 
